@@ -13,6 +13,6 @@ typedef struct Address {
 
 Address setAddress(char*, char*, char*);
 void getAddress(Address);
-// void copyAddress(Address *, Address *);
+int findByFullName(char [], Address[], int n);
 
 #endif

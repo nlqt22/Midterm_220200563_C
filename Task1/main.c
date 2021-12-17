@@ -8,6 +8,28 @@
 char line[1024];
 Address list[150];
 
+void sortByName(ElementType list[], int n) {
+    FILE *fout = fopen("./out/sortByName.csv", "w");
+    insertion_sort(list, n);
+    fprintf(fout, "name;email;telephone\n");
+    for(int i = 0; i < n; ++i) {
+        fprintf(fout, "%s;%s;%s\n", list[i].name, list[i].email, list[i].telephone);
+    }
+}
+
+void readString(char field[], char value[]) {
+    printf("%s: ", field);
+    fgets(value, NAME_LENGTH, stdin);
+    value[strlen(value)-1] = '\0';
+}
+
+void searchByFullName(ElementType list[], int n) {
+    list[-1] = setAddress("Not Found", "Not Found", "Not Found");
+    char name[NAME_LENGTH];
+    readString("Full Name", name);
+    getAddress(list[findByFullName(name, list, n)]);
+}
+
 int main() {
     int start = 0;
     FILE *f = fopen("./data/input.csv", "r");
@@ -19,22 +41,6 @@ int main() {
         ++start;
     }
     fclose(f);
-    FILE *fout = fopen("./out/output1.csv", "w");
-    insertion_sort(list, start);
-    for(int i = 0; i < start; ++i) {
-        fprintf(fout, "%s;%s;%s\n", list[i].name, list[i].email, list[i].telephone);
-    }
-
-    printf("Name: ");
-    char s[128];
-    fgets(s, 128, stdin);
-    s[strlen(s)-1] = '\0';
-    Address X = setAddress(s, "None", "None");
-    int key = binary_search(list, X, 0, start-1);
-    if(key == -1) {
-        printf("Not Found !");
-        return 0;
-    } else {
-        getAddress(list[key]);
-    }
+    sortByName(list, start);
+    searchByFullName(list, start);
 }

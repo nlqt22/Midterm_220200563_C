@@ -1,0 +1,1 @@
+gcc main.c ./lib/address.c ./lib/algorithm.c ./lib/filereader.c -o main
