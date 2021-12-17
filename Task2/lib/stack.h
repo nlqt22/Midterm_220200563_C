@@ -2,7 +2,7 @@
 #define STACK_H
 #define MaxLength 100
 
-typedef char ElementType;
+typedef int ElementType;
 typedef struct _Stack {
     ElementType Element[MaxLength];
     int top;

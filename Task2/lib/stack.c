@@ -22,5 +22,5 @@ void Stack_Push(ElementType element, Stack* stack) {
 ElementType Stack_Pop(Stack* stack) {
     if(Stack_IsEmpty(*stack)) {
         printf("Stack underflow.\n");
-    } else return (*stack).Element[(*stack).top--];
+    } else return (*stack).Element[--(*stack).top];
 }
