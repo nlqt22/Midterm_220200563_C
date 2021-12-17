@@ -1,6 +1,6 @@
 #ifndef QUEUE_H
 #define QUEUE_H
-#define MaxLength 10
+#define MaxLength 120
 
 #include "address.h"
 

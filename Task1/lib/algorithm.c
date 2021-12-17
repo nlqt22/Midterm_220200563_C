@@ -26,3 +26,4 @@ int binary_search(ElementType A[], ElementType X, int Lo, int Hi) {
     else if (strcmp(X.name, A[Mid].name) == 1) return binary_search(A, X, Mid+1, Hi);
     else return binary_search(A, X, Lo, Mid-1); 
 }
+

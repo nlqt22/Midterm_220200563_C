@@ -24,11 +24,11 @@ void Queue_Enqueue(ElementType X, Queue *Q) {
 }
 
 ElementType Queue_Dequeue(Queue *Q) {
+    ElementType x;
     if(!Queue_IsEmpty(*Q)) {
-        return Q->Element[Q->Front];
+        x = Q->Element[Q->Front];
         Q->Front++;
         if(Q->Front > Q->Rear) Queue_Init(Q);
-    } else {
-        printf("Queue is empty!");
+        return x;
     }
 }
