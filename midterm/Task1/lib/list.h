@@ -11,7 +11,7 @@ typedef struct _Node {
 
 typedef Node List;
 
-List* List_Init();
+void List_Init(List*);
 List* List_CreateNode(ElementType);
 List* List_Insert(ElementType, List*);
 

@@ -1,3 +1,0 @@
-gcc main.c ./lib/address.c ./lib/algorithm.c ./lib/filereader.c -o main
-gcc part3.c ./lib/address.c ./lib/algorithm.c ./lib/filereader.c ./lib/queue.c -o main
-gcc part4.c ./lib/address.c ./lib/algorithm.c ./lib/filereader.c ./lib/queue.c -o main

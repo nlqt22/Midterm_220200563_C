@@ -4,6 +4,7 @@
 
 #include "address.h"
 #include "algorithm.h"
+#include "list.h"
 
 void insertion_sort(ElementType list[], int n) {
     ElementType next;
@@ -27,3 +28,6 @@ int binary_search(ElementType A[], ElementType X, int Lo, int Hi) {
     else return binary_search(A, X, Lo, Mid-1); 
 }
 
+void self_search(Node* root, ElementType key) {
+    
+}

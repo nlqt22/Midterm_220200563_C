@@ -32,6 +32,7 @@ int main() {
         menu();
         scanf("%d", &op);
         if(op == 1) {
+            op = 0;
             char name[NAME_LENGTH], email[EMAIL_LENGTH], telephone[TELEPHONE_LENGTH];
             readString("Please type name", name);
             readString("Please type email", email);
@@ -43,11 +44,20 @@ int main() {
             }
             Queue_Enqueue(setAddress(name, email, telephone), &queue);
         } else if (op == 2) {
+            op = 0;
             Queue queue1 = queue;
             while(!Queue_IsEmpty(queue1)) {
                 Address x = Queue_Dequeue(&queue1);
                 getAddress(x);
             }
         } else if (op == 0) return 0;
+        char l;
+        do {
+            fflush(stdin);
+            printf("[x] Continue.\n");
+            scanf("%c", &l);
+        } while(l != 'x');
+        system("cls");
     } while(op >= 0 && op <= 2);
+    system("pause");
 }
